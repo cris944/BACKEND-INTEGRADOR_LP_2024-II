@@ -50,6 +50,9 @@ public class Estudiante {
     @Column(name = "correo_institucional", length = 100, unique = true)
     private String correo_institucional;
     
+    @Column(name = "estado",length = 1) 
+    private char estado;
+    
 	@ManyToOne
 	@JoinColumn(name="id_persona", nullable = false)
 	private Persona persona;
@@ -57,4 +60,8 @@ public class Estudiante {
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy ="estudiante",orphanRemoval = true)
 	@JsonIgnore
 	private Set<Matricula> matricula;
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy ="estudiante",orphanRemoval = true)
+	@JsonIgnore
+	private Set<Solicitud> solicitud;
 }

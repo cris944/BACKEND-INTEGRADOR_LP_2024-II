@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Objects;
 import java.util.Set;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -67,5 +68,21 @@ public class Persona {
     @OneToOne(mappedBy = "persona", cascade = CascadeType.ALL)
     @JsonIgnore
     private Usuario usuario;
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);  
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Persona persona = (Persona) obj;
+        return Objects.equals(id, persona.id);  
+    }
 }
+
+
 

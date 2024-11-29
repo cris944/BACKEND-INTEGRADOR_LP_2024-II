@@ -1,14 +1,15 @@
 package pe.edu.upeu.pppmanager.service;
 
+import pe.edu.upeu.pppmanager.dto.SolicitudDto;
+
 import java.util.List;
 
-
-import pe.edu.upeu.pppmanager.entity.Solicitud;
-
 public interface SolicitudService {
-	 Solicitud obtenerDatosEstudianteConEmpresasYLineas();
-	    void guardarSolicitud(Solicitud solicitud);
-	    List<Solicitud> listarSolicitudes();
-	    List<Solicitud> listarSolicitudesPorEstudiante(Long estudianteId); 
-}
+    List<SolicitudDto> listarSolicitudes();
+    SolicitudDto crearSolicitud(SolicitudDto solicitudDto, String token); 
+    SolicitudDto obtenerSolicitudPorId(Long id);
+    SolicitudDto actualizarSolicitud(Long id, SolicitudDto solicitudDto);
+    void eliminarSolicitud(Long id);
     
+}
+

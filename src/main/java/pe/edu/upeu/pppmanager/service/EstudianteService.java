@@ -11,5 +11,4 @@ public interface EstudianteService {
 	void delete(Long id);
 	Optional<Estudiante> read(Long id);
 	List<Estudiante> readAll();
-	
 }

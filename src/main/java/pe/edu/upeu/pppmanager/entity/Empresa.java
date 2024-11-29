@@ -35,7 +35,7 @@ public class Empresa {
     private Long id;
     
     @Column(name="razon_social", length = 100)
-    private String razon_social;
+    private String Razon_Social;
     
     @Column(name="direccion", length = 100)
     private String direccion;
@@ -51,6 +51,10 @@ public class Empresa {
     
     @Column(name="estado" , length = 1, nullable = false)
     private char estado;
+    
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy ="empresa")
+	@JsonIgnore
+	private Set<Solicitud> solicitud;
     
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy ="empresa")
 	@JsonIgnore

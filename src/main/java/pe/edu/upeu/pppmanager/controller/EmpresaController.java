@@ -81,7 +81,7 @@ public class EmpresaController {
 	        if (existingEmpresa.isPresent()) {
 	            Empresa updatedEmpresa = existingEmpresa.get();
 	            
-	            updatedEmpresa.setRazon_social(empresas.getRazon_social());
+	            updatedEmpresa.setRazon_Social(empresas.getRazon_Social());
 	            updatedEmpresa.setSector(empresas.getSector());
 	            updatedEmpresa.setRUC(empresas.getRUC());
 	            updatedEmpresa.setDireccion(empresas.getDireccion());

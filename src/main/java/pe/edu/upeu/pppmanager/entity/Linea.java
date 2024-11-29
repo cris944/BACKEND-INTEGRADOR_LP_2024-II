@@ -1,4 +1,4 @@
-package pe.edu.upeu.pppmanager.entity;
+	package pe.edu.upeu.pppmanager.entity;
 
 import java.util.Set;
 
@@ -33,7 +33,7 @@ public class Linea {
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Column(name="id_linea")
-		private Long id_linea;
+		private Long id;
 		
 	    @ManyToOne
 	    @JoinColumn(name = "id_carrera")
